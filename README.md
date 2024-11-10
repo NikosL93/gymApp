@@ -9,11 +9,11 @@ A Spring Boot backend application designed to efficiently manage gym classes and
 - Role-based access control (Admin and Member roles)
 - Secure password encryption using BCrypt
 
-### Member Management
-- Create, update, and delete member profiles
-- Search members by name
-- Pagination and sorting capabilities for member lists
-- Gym class enrollment status
+### Member/Admin Management
+- Create, update, and delete member/admin profiles
+- Search members/admin by name
+- Pagination and sorting capabilities for member/admin lists
+- Gym class enrollment status for members
 - Authentication credentials
 
 ### Gym Classes
