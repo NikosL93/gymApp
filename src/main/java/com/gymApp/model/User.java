@@ -1,5 +1,6 @@
 package com.gymApp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.persistence.*;
@@ -38,8 +39,10 @@ public class User {
     private Role role;
 
     @OneToOne(mappedBy = "user")
+    @JsonIgnore
     private Member member;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "user")
     private Admin admin;
 

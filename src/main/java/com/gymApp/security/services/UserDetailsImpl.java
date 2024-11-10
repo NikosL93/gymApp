@@ -16,7 +16,7 @@ import com.gymApp.model.User;
 public class UserDetailsImpl implements UserDetails {
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private Long userId;
     private String username;
     private String email;
 
@@ -25,8 +25,8 @@ public class UserDetailsImpl implements UserDetails {
 
     private GrantedAuthority authority;
 
-    public UserDetailsImpl(Long id, String username, String email, String password, GrantedAuthority authority) {
-        this.id = id;
+    public UserDetailsImpl(Long userId, String username, String email, String password, GrantedAuthority authority) {
+        this.userId = userId;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -37,7 +37,7 @@ public class UserDetailsImpl implements UserDetails {
         GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole().name());
 
         UserDetailsImpl userDetails = new UserDetailsImpl();
-        userDetails.setId(user.getUserid());
+        userDetails.setUserId(user.getUserid());
         userDetails.setUsername(user.getUserName());
         userDetails.setEmail(user.getEmail());
         userDetails.setPassword(user.getPassword());
@@ -51,8 +51,8 @@ public class UserDetailsImpl implements UserDetails {
         return List.of(authority);  // Επιστρέφω single-element list γιατί έχει μια μόνο authority το member
     }
 
-    public Long getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
     public String getEmail() {
@@ -96,7 +96,7 @@ public class UserDetailsImpl implements UserDetails {
         if (o == null || getClass() != o.getClass())
             return false;
         UserDetailsImpl user = (UserDetailsImpl) o;
-        return Objects.equals(id, user.id);
+        return Objects.equals(userId, user.userId);
     }
 
 }

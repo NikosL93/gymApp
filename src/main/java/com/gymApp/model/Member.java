@@ -1,6 +1,6 @@
 package com.gymApp.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -37,7 +37,6 @@ public class Member {
     // Κάθε μέλος έχει δικαίωμα συμμετοχής σε μία μόνο τάξη
     @ManyToOne
     @JoinColumn(name= "gymClass_Id")
-    @JsonIgnore
     private GymClass gymClass;
 
     @OneToOne(cascade = CascadeType.ALL) //Το cascade πάντα στο owner entity
