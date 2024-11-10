@@ -1,6 +1,6 @@
 # Gym Management App
 
-A Spring Boot backend application designed to efficiently manage gym classes and memberships.
+A Spring Boot backend application designed to efficiently manage gym classes and memberships, implementing RESTful APIs to enable CRUD operations.
 
 ## Features
 
